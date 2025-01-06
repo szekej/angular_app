@@ -16,6 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()), 
     provideAnimationsAsync(),
     importProvidersFrom(ReactiveFormsModule),
-    importProvidersFrom(RouterModule),
+    importProvidersFrom(RouterModule), provideAnimationsAsync(),
   ]
 };
