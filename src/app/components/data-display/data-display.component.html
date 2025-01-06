@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-title>Dane z API</mat-card-title>
+    <mat-card-content>
+      <ng-container *ngIf="!error; else errorTemplate">
+        <mat-table [dataSource]="data" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="userId">
+            <mat-header-cell *matHeaderCellDef> User ID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.userId }} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef> Tytuł </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.title }} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="body">
+            <mat-header-cell *matHeaderCellDef> Treść </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <div class="body-text">{{ element.body }}</div>
+            </mat-cell>
+          </ng-container>
+  
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+      </ng-container>
+  
+      <ng-template #errorTemplate>
+        <p class="error">{{ error }}</p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+  

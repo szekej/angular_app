@@ -14,11 +14,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';  // Dodajemy MatFormFieldModule
-import { CommonModule } from '@angular/common';  // CommonModule
+import { MatFormFieldModule } from '@angular/material/form-field';  
+import { CommonModule } from '@angular/common'; 
+
+import { DataDisplayComponent } from './components/data-display/data-display.component';
+import { HttpClientModule } from '@angular/common/http';
+
+export const AppConstants = {
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts'
+};
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    importProvidersFrom(HttpClientModule),
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 
     provideClientHydration(withEventReplay()), 
@@ -33,6 +41,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(MatIconModule),
     importProvidersFrom(MatTableModule),
     importProvidersFrom(MatFormFieldModule),  
-    
+
   ]
 };

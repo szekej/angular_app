@@ -16,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { DataDisplayComponent } from './components/data-display/data-display.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   imports: [
     HeaderComponent, FooterComponent, ChildComponent, CommonModule, ReactiveFormsModule, RouterModule, FormComponent,
     MatButtonModule, MatCardModule, MatInputModule, MatIconModule, MatTableModule, MatFormFieldModule,
+    HttpClientModule
   ], 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
@@ -36,7 +39,6 @@ export class AppComponent {
   userForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    // inicjalizacja formularza
     this.userForm = this.fb.group({
       name: ['', Validators.required], 
       email: ['', [Validators.required, Validators.email]]
