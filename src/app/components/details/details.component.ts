@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+
 
 @Component({
   selector: 'app-details',
-  imports: [],
   templateUrl: './details.component.html',
-  styleUrl: './details.component.css'
+  styleUrls: ['./details.component.css'],
+  imports: [MatCardModule],
 })
 export class DetailsComponent {
 
 }
+
+
+

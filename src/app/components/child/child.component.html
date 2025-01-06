@@ -1,5 +1,15 @@
-<div>
-    <h2>Child Component</h2>
-    <button (click)="sendMessageToParent()">Send Message to Parent</button>
-  </div>
-  
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Child Component</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- Przycisk do wyświetlenia tekstu -->
+    <button mat-raised-button color="primary" (click)="showMessage()">Kliknij mnie</button>
+
+    <!-- Wyświetlanie komunikatu -->
+    <div *ngIf="message">
+      <p>{{ message }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>

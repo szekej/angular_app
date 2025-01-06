@@ -1,34 +1,11 @@
-<app-header></app-header>
-
-<nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/details">Details</a>
-  </nav>
-
-<!-- Wyświetlenie wiadomości z dziecka -->
-<!-- <div>
-  <h3>Message from Child: {{ messageFromChild }}</h3>
-</div> -->
-
-<router-outlet></router-outlet>
-
-<!-- formularz -->
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <label for="name">Imię:</label>
-  <input id="name" formControlName="name" type="text" />
-  <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
-    Imię jest wymagane.
+<div class="app-container">
+  <app-header></app-header>
+  
+  <div class="main-content">
+    <router-outlet></router-outlet>
+    <app-form></app-form> 
+    <app-child></app-child>
   </div>
-
-  <label for="email">E-mail:</label>
-  <input id="email" formControlName="email" type="email" />
-  <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
-    Podaj poprawny e-mail.
-  </div>
-
-  <button type="submit" [disabled]="userForm.invalid">Wyślij</button>
-</form>
-
-<app-child (messageEvent)="receiveMessage($event)"></app-child>
-
-<app-footer></app-footer>
+  
+  <app-footer></app-footer>
+</div>

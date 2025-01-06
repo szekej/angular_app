@@ -1,0 +1,17 @@
+.home-card {
+    margin: 20px;
+  }
+  
+  mat-card-header {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  mat-card-title {
+    font-size: 1.5rem;
+  }
+  
+  .white-text {
+    color: white;
+  }
+  

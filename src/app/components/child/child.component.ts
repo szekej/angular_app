@@ -1,15 +1,19 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component} from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-child',
   standalone: true,
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css']
+  styleUrls: ['./child.component.css'],
+  imports: [MatCardModule, CommonModule]
 })
 export class ChildComponent {
-  @Output() messageEvent = new EventEmitter<string>();
+  message: string = '';
 
-  sendMessageToParent() {
-    this.messageEvent.emit('Hello from Child!');
+  showMessage() {
+    this.message = 'Child here!';
   }
 }

@@ -1,0 +1,33 @@
+mat-form-field, mat-label, input, button, textarea {
+    color: white;
+}
+
+input.mat-input-element, textarea.mat-input-element {
+    color: white;
+    background-color: #333; 
+}
+
+mat-form-field {
+    background-color: #333; 
+}
+
+button.mat-raised-button {
+    background-color: #007bff; 
+    color: white; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    padding: 10px 20px; 
+}
+
+button.mat-raised-button:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+mat-card {
+    background-color: #222; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    color: white;
+}
