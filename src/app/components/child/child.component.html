@@ -4,10 +4,8 @@
   </mat-card-header>
 
   <mat-card-content>
-    <!-- Przycisk do wyświetlenia tekstu -->
     <button mat-raised-button color="primary" (click)="showMessage()">Kliknij mnie</button>
 
-    <!-- Wyświetlanie komunikatu -->
     <div *ngIf="message">
       <p>{{ message }}</p>
     </div>
